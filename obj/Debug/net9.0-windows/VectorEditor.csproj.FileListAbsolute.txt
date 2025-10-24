@@ -1,0 +1,17 @@
+C:\Users\user\source\repos\VectorEditor\bin\Debug\net9.0-windows\VectorEditor.exe
+C:\Users\user\source\repos\VectorEditor\bin\Debug\net9.0-windows\VectorEditor.deps.json
+C:\Users\user\source\repos\VectorEditor\bin\Debug\net9.0-windows\VectorEditor.runtimeconfig.json
+C:\Users\user\source\repos\VectorEditor\bin\Debug\net9.0-windows\VectorEditor.dll
+C:\Users\user\source\repos\VectorEditor\bin\Debug\net9.0-windows\VectorEditor.pdb
+C:\Users\user\source\repos\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.forms.MainForm.resources
+C:\Users\user\source\repos\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.csproj.GenerateResource.cache
+C:\Users\user\source\repos\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.AssemblyInfo.cs
+C:\Users\user\source\repos\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.sourcelink.json
+C:\Users\user\source\repos\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.dll
+C:\Users\user\source\repos\VectorEditor\obj\Debug\net9.0-windows\refint\VectorEditor.dll
+C:\Users\user\source\repos\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.pdb
+C:\Users\user\source\repos\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.genruntimeconfig.cache
+C:\Users\user\source\repos\VectorEditor\obj\Debug\net9.0-windows\ref\VectorEditor.dll
