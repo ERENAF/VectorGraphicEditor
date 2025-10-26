@@ -21,11 +21,13 @@ namespace VectorEditor.commands
         }
         public void Execute()
         {
-            _shape.Position = _newPos;
+            _shape.X = _newPos.X;
+            _shape.Y = _newPos.Y;
         }
         public void Undo()
         {
-            _shape.Position = _oldPos;
+            _shape.X = _oldPos.X;
+            _shape.Y= _oldPos.Y;
         }
 
     }

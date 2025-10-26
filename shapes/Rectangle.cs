@@ -1,134 +1,89 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VectorEditor.shapes;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
 namespace VectorEditor.shapes
 {
-    public class Rectangle: Shape
+    public class Rectangle : Shape
     {
-        public override void Draw (Graphics g)
+        private float _width = 100;
+        private float _height = 80;
+
+        public float Width
         {
-            DrawWithTransformations(g, (g) =>
+            get => _width;
+            set
             {
+                _width = Math.Max(1, value);
+                OnPropertyChanged(nameof(Width));
+            }
+        }
+
+        public float Height
+        {
+            get => _height;
+            set
+            {
+                _height = Math.Max(1, value);
+                OnPropertyChanged(nameof(Height));
+            }
+        }
+
+        public override void Draw(Graphics graphics)
+        {
+            try
+            {
+                // Основная заливка
                 using (var fillBrush = new SolidBrush(Color.FromArgb((int)(Opacity * 255), FillColor)))
+                {
+                    graphics.FillRectangle(fillBrush, X, Y, Width, Height);
+                }
+
+                // Обводка
                 using (var strokePen = new Pen(StrokeColor, StrokeWidth))
                 {
-                    g.FillRectangle(fillBrush, Position.X, Position.Y, Size.width, Size.height);
-                    g.DrawRectangle(strokePen, Position.X, Position.Y, Size.width, Size.height);
-                    if (IsSelected)
-                    {
-                        DrawSelection(g);
-                    }
+                    graphics.DrawRectangle(strokePen, X, Y, Width, Height);
                 }
-            }
-            );
-        }
 
-        private void DrawSelection(Graphics g)
-        {
-            using (var selectedPen = new Pen(Color.Red, StrokeWidth)
-            {
-                DashPattern = new float[] { 3, 3 },
-                DashStyle = DashStyle.Custom
-            })
-            {
-                g.DrawRectangle(selectedPen, Position.X, Position.Y, Size.width, Size.height);
-            }
-            DrawTranformHandles(g);
-        }
-
-        private void DrawTranformHandles(Graphics g)
-        {
-            var bounds = GetBounds();
-            var center = GetRotationCenter();
-            
-            var rotationHandle = new PointF(center.X, bounds.Y - 20);
-            using (var handleBrush = new SolidBrush(Color.Blue))
-            using (var handlePen = new Pen(Color.Blue,1))
-            {
-                g.DrawLine(handlePen, center, rotationHandle);
-                g.FillEllipse(handleBrush, rotationHandle.X - 4, rotationHandle.Y - 4, 8, 8);
-                g.FillEllipse(handleBrush, rotationHandle.X - 4, rotationHandle.Y - 4, 8, 8);
-                DrawScaleHandles(g, bounds);
-            }
-        }
-        private void DrawScaleHandles(Graphics g, RectangleF bounds)
-        {
-            var corners = new[]
-            {
-                new PointF(bounds.Left, bounds.Top),
-                new PointF(bounds.Right, bounds.Top),
-                new PointF(bounds.Right, bounds.Bottom),
-                new PointF(bounds.Left, bounds.Bottom)
-            };
-            using (var handleBrush = new SolidBrush(Color.Green))
-            {
-                foreach (var corner in corners)
+                // Выделение если выбрано
+                if (IsSelected)
                 {
-                    g.FillRectangle(handleBrush, corner.X - 3, corner.Y - 3, 6, 6);
+                    DrawSelection(graphics);
                 }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Rectangle draw error: {ex.Message}");
+            }
+        }
+
+        private void DrawSelection(Graphics graphics)
+        {
+            try
+            {
+                using (var selectedPen = new Pen(Color.Red, 1)
+                {
+                    DashPattern = new float[] { 3, 3 }
+                })
+                {
+                    graphics.DrawRectangle(selectedPen, X, Y, Width, Height);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Selection drawing error: {ex.Message}");
             }
         }
 
         public override bool ContainsPoint(PointF point)
         {
-            var localPoint = TransformPoint(point, true);
-            return localPoint.X >= Position.X && localPoint.X <= Position.X + Size.width &&
-                localPoint.Y >= Position.Y && localPoint.Y <= Position.Y + Size.height;
+            return point.X >= X && point.X <= X + Width &&
+                   point.Y >= Y && point.Y <= Y + Height;
         }
 
         public override RectangleF GetBounds()
         {
-            if (Rotation == 0 && Scale.X == 0 && Scale.Y == 0)
-            {
-                return new RectangleF(Position.X,Position.Y, Size.width, Size.height);
-            }
-
-            var corners = new PointF[]
-            {
-                new PointF(Position.X, Position.Y),
-                new PointF(Position.X+Size.width,Position.Y),
-                new PointF(Position.X+Size.width, Position.Y+Size.height),
-                new PointF(Position.X,Position.Y+Size.height)
-            };
-
-            using (var matrix = GetTransfromationMatrix())
-            {
-                matrix.TransformPoints(corners);
-            }
-            float minX = corners.Min(p => p.X);
-            float minY = corners.Min(p => p.Y);
-            float maxX = corners.Max(p => p.X);
-            float maxY = corners.Max(p => p.Y);
-
-            return new RectangleF(minX,minY, maxX-minX, maxY-minY);
-        }
-
-        public bool IsScaleHandleClicked(PointF point)
-        {
-            if (!IsSelected) return false;
-
-            var bounds = GetBounds();
-            var corners = new[]
-            {
-                new PointF(bounds.Left, bounds.Top),
-                new PointF(bounds.Right, bounds.Top),
-                new PointF(bounds.Right, bounds.Bottom),
-                new PointF(bounds.Left, bounds.Bottom)
-            };
-            foreach (var cor in corners)
-            {
-                var transformedCorner = TransformPoint(cor);
-                var handleRect = new RectangleF(transformedCorner.X - 6, transformedCorner.Y - 6, 12, 12);
-                if (handleRect.Contains(point)) { return true; }
-            }
-            return false;
+            return new RectangleF(X, Y, Width, Height);
         }
     }
 }
