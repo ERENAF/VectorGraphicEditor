@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VectorEditor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d86acc60366892aaa598b4ad76015f7f2ce26030")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2d3e3906570eb801cb791a38d5a325350b3e6d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("VectorEditor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VectorEditor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

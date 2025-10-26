@@ -1,4 +1,9 @@
-﻿namespace VectorEditor.forms
+﻿using System.Drawing;
+using System.Windows.Forms;
+using VectorEditor.shapes;
+using VectorEditor.commands;
+
+namespace VectorEditor.forms
 {
     partial class MainForm
     {

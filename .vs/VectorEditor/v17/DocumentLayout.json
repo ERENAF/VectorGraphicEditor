@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\VectorEditor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|c:\\users\\user\\source\\repos\\vectoreditor\\commands\\deleteshapecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|solutionrelative:commands\\deleteshapecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|c:\\users\\user\\source\\repos\\vectoreditor\\commands\\moveshapecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|solutionrelative:commands\\moveshapecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|c:\\users\\user\\source\\repos\\vectoreditor\\commands\\addshapecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|solutionrelative:commands\\addshapecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|c:\\users\\user\\source\\repos\\vectoreditor\\commands\\deleteshapecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|solutionrelative:commands\\deleteshapecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|c:\\users\\user\\source\\repos\\vectoreditor\\commands\\icommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|solutionrelative:commands\\icommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|c:\\users\\user\\source\\repos\\vectoreditor\\commands\\moveshapecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|solutionrelative:commands\\moveshapecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|c:\\users\\user\\source\\repos\\vectoreditor\\forms\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|solutionrelative:forms\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|c:\\users\\user\\source\\repos\\vectoreditor\\shapes\\rectangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|solutionrelative:shapes\\rectangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|C:\\Users\\user\\source\\repos\\VectorEditor\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|solutionrelative:forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|c:\\users\\user\\source\\repos\\vectoreditor\\shapes\\shape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|c:\\users\\user\\source\\repos\\vectoreditor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|C:\\Users\\user\\source\\repos\\VectorEditor\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A8BC72F8-EAE8-4F34-9D1F-DBFEB471EB14}|VectorEditor.csproj|solutionrelative:forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,11 +46,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "ICommand.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\VectorEditor\\commands\\ICommand.cs",
+              "RelativeDocumentMoniker": "commands\\ICommand.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\VectorEditor\\commands\\ICommand.cs",
+              "RelativeToolTip": "commands\\ICommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T01:10:40.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DeleteShapeCommand.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\VectorEditor\\commands\\DeleteShapeCommand.cs",
               "RelativeDocumentMoniker": "commands\\DeleteShapeCommand.cs",
@@ -59,20 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MoveShapeCommand.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\VectorEditor\\commands\\MoveShapeCommand.cs",
-              "RelativeDocumentMoniker": "commands\\MoveShapeCommand.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\VectorEditor\\commands\\MoveShapeCommand.cs",
-              "RelativeToolTip": "commands\\MoveShapeCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T01:19:15.055Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "AddShapeCommand.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\VectorEditor\\commands\\AddShapeCommand.cs",
               "RelativeDocumentMoniker": "commands\\AddShapeCommand.cs",
@@ -86,32 +90,57 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ICommand.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\VectorEditor\\commands\\ICommand.cs",
-              "RelativeDocumentMoniker": "commands\\ICommand.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\VectorEditor\\commands\\ICommand.cs",
-              "RelativeToolTip": "commands\\ICommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "MoveShapeCommand.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\VectorEditor\\commands\\MoveShapeCommand.cs",
+              "RelativeDocumentMoniker": "commands\\MoveShapeCommand.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\VectorEditor\\commands\\MoveShapeCommand.cs",
+              "RelativeToolTip": "commands\\MoveShapeCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T01:10:40.473Z",
+              "WhenOpened": "2025-10-24T01:19:15.055Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\VectorEditor\\forms\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "forms\\MainForm.Designer.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\VectorEditor\\forms\\MainForm.Designer.cs",
+              "RelativeToolTip": "forms\\MainForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T06:51:54.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\VectorEditor\\forms\\MainForm.cs",
+              "RelativeDocumentMoniker": "forms\\MainForm.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\VectorEditor\\forms\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "forms\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T23:04:30.735Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Rectangle.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\VectorEditor\\shapes\\Rectangle.cs",
               "RelativeDocumentMoniker": "shapes\\Rectangle.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\VectorEditor\\shapes\\Rectangle.cs",
               "RelativeToolTip": "shapes\\Rectangle.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAiwIUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwIUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-23T23:34:10.609Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Shape.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\VectorEditor\\shapes\\Shape.cs",
               "RelativeDocumentMoniker": "shapes\\Shape.cs",
@@ -123,7 +152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\VectorEditor\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -132,17 +161,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-23T23:04:34.481Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\VectorEditor\\forms\\MainForm.cs",
-              "RelativeDocumentMoniker": "forms\\MainForm.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\VectorEditor\\forms\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "forms\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T23:04:30.735Z"
             }
           ]
         }
