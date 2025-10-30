@@ -33,16 +33,17 @@ namespace VectorEditor.shapes
         {
             try
             {
+                RotationTransform(graphics);
                 // Основная заливка
                 using (var fillBrush = new SolidBrush(Color.FromArgb((int)(Opacity * 255), FillColor)))
                 {
-                    graphics.FillRectangle(fillBrush, X, Y, Width, Height);
+                    graphics.FillRectangle(fillBrush, X, Y, Width*Scale, Height*Scale);
                 }
 
                 // Обводка
                 using (var strokePen = new Pen(StrokeColor, StrokeWidth))
                 {
-                    graphics.DrawRectangle(strokePen, X, Y, Width, Height);
+                    graphics.DrawRectangle(strokePen, X, Y, Width*Scale, Height*Scale);
                 }
 
                 // Выделение если выбрано
@@ -50,6 +51,8 @@ namespace VectorEditor.shapes
                 {
                     DrawSelection(graphics);
                 }
+
+
             }
             catch (Exception ex)
             {
@@ -66,7 +69,7 @@ namespace VectorEditor.shapes
                     DashPattern = new float[] { 3, 3 }
                 })
                 {
-                    graphics.DrawRectangle(selectedPen, X, Y, Width, Height);
+                    graphics.DrawRectangle(selectedPen, X, Y, Width*Scale, Height*Scale);
                 }
             }
             catch (Exception ex)
@@ -77,13 +80,13 @@ namespace VectorEditor.shapes
 
         public override bool ContainsPoint(PointF point)
         {
-            return point.X >= X && point.X <= X + Width &&
-                   point.Y >= Y && point.Y <= Y + Height;
+            return point.X >= X && point.X <= X + Width*Scale &&
+                   point.Y >= Y && point.Y <= Y + Height*Scale;
         }
 
         public override RectangleF GetBounds()
         {
-            return new RectangleF(X, Y, Width, Height);
+            return new RectangleF(X, Y, Width*Scale, Height*Scale);
         }
     }
 }

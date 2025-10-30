@@ -8,11 +8,16 @@ namespace VectorEditor.shapes
     {
         private float _x;
         private float _y;
+        private float _rotation;
+        private float _scale = 1;
         private Color _fillColor = Color.LightBlue;
         private Color _strokeColor = Color.Black;
         private float _strokeWidth = 2.0f;
         private float _opacity = 1.0f;
         private bool _isSelected;
+        private float _width = 100;
+        private float _height = 80;
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -35,6 +40,42 @@ namespace VectorEditor.shapes
             {
                 X = value.X;
                 Y = value.Y;
+            }
+        }
+        public float Rotation
+        {
+            get => _rotation;
+            set => _rotation = value;
+        }
+        public float Scale
+        {
+            get => _scale;
+            set
+            {
+                if (value < 0)
+                {
+                    value = 0;
+                }
+                _scale = value;
+            }
+        }
+        public float Width
+        {
+            get => _width;
+            set
+            {
+                _width = Math.Max(1, value) * Scale;
+                OnPropertyChanged(nameof(Width));
+            }
+        }
+
+        public float Height
+        {
+            get => _height;
+            set
+            {
+                _height = Math.Max(1, value);
+                OnPropertyChanged(nameof(Height));
             }
         }
 
@@ -75,6 +116,17 @@ namespace VectorEditor.shapes
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public virtual PointF GetRotationCenter()
+        {
+            var bounds = GetBounds();
+            return new PointF(bounds.X + bounds.Width*Scale / 2, bounds.Y + bounds.Height*Scale / 2);
+        }
+
+        public void RotationTransform(Graphics g)
+        {
+            g.RotateTransform(Rotation);
         }
     }
 }

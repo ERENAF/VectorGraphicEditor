@@ -28,6 +28,11 @@ namespace VectorEditor.forms
         private PointF _startPos;
         private PointF _finishPos;
 
+
+        private NumericUpDown posXNUD;
+        private NumericUpDown posYNUD;
+        private NumericUpDown angleNUD;
+        private NumericUpDown scaleNUD;
         private Panel canvas;
         public MainForm()
         {
@@ -73,6 +78,59 @@ namespace VectorEditor.forms
                 if (colorDialog.ShowDialog() == DialogResult.OK) { _currentColor = colorDialog.Color; }
             };
 
+            var posLabel = new Label { Text = "Position", Top = 320, Left = 10 };
+
+            posXNUD = new NumericUpDown { Top = 340, Left = 10, Minimum = 0, Maximum = 1000, Value = 0, Increment = 1, Width = 60 };
+            posXNUD.ValueChanged += (s, e) =>
+            {
+                if (_selectedshape != null)
+                {
+                    var finpos = new PointF((float)posXNUD.Value, _selectedshape.Position.Y);
+                    var command = new MoveShapeCommand(_selectedshape, _selectedshape.Position, finpos);
+                    _shapemanager.ExecuteCommand(command);
+                    canvas.Invalidate();
+                }
+            };
+
+            posYNUD = new NumericUpDown { Top = 340, Left = 80, Minimum = 0, Maximum = 1000, Value = 0, Increment = 1, Width = 60};
+            posYNUD.ValueChanged += (s, e) =>
+            {
+                if (_selectedshape != null)
+                {
+                    var finpos = new PointF(_selectedshape.X, (float)posYNUD.Value);
+                    var command = new MoveShapeCommand(_selectedshape, _selectedshape.Position, finpos);
+                    _shapemanager.ExecuteCommand(command);
+                    canvas.Invalidate();
+                }
+            };
+
+
+
+            var scaleLabel = new Label { Text = "Scale: ", Top = 360, Left = 10 };
+            scaleNUD = new NumericUpDown { Text = "Scale: ", Top = 380, Left = 10 , Minimum = 0, Maximum = 1000, Value = 0, Increment = 1};
+            scaleNUD.ValueChanged += (s, e) =>
+            {
+                if (_selectedshape != null)
+                {
+                    var command = new ScaleCommand(_selectedshape.Scale, (float)scaleNUD.Value, _selectedshape);
+                    _shapemanager.ExecuteCommand(command);
+                    canvas.Invalidate();
+                }
+            };
+
+            var angleLabel = new Label { Text = "Rotation: ", Top = 420, Left = 10 };
+            angleNUD = new NumericUpDown { Text = "Rotation: ", Top = 440, Left = 10 , Minimum = 0, Maximum = 360, Value = 0, Increment = 1};
+            angleNUD.ValueChanged += (s, e) =>
+            {
+                if (_selectedshape != null)
+                {
+                    var command = new RotationCommand(_selectedshape, (float)angleNUD.Value);
+                    _shapemanager.ExecuteCommand(command);
+                    canvas.Invalidate();
+                }
+            };
+
+
             var delBtn = new Button { Text = "Delete", Top = 170, Left = 10, Width = 80 };
             var bringToFrontBtn = new Button { Text = "To Front", Top = 200, Left = 10, Width = 80 };
             var sendToBackBtn = new Button { Text = "To Back", Top = 230, Left = 10, Width = 80 };
@@ -85,8 +143,9 @@ namespace VectorEditor.forms
             undoBtn.Click += (s, e) => _shapemanager.Undo();
             redoBtn.Click += (s, e) => _shapemanager.Redo();
 
+
             toolPanel.Controls.AddRange(new Control[] {
-                shapeCmbbtn, colorLabel,colorBtn,delBtn,bringToFrontBtn,sendToBackBtn,undoBtn,redoBtn
+                shapeCmbbtn, colorLabel,colorBtn,delBtn,bringToFrontBtn,sendToBackBtn,undoBtn,redoBtn, angleLabel,angleNUD, scaleNUD, scaleLabel, posLabel, posXNUD, posYNUD
             });
             canvas = new Panel
             {
@@ -128,6 +187,11 @@ namespace VectorEditor.forms
                 {
                     shape.IsSelected = shape == _selectedshape;
                 }
+                posXNUD.Value = (int)_selectedshape.X;
+                posYNUD.Value = (int)_selectedshape.Y;
+                angleNUD.Value = (int)_selectedshape.Rotation;
+                scaleNUD.Value = (int)_selectedshape.Scale;
+
             }
             else
             {
@@ -165,6 +229,10 @@ namespace VectorEditor.forms
             _IsDrawing = false;
             _IsMoving = false;
             _IsRotating = false;
+/*надо бы исправить */
+            _shapemanager.ExecuteCommand(new MoveShapeCommand(_selectedshape, _startPos, _finishPos));
+            posXNUD.Value = (int)_finishPos.X;
+            posYNUD.Value = (int)_finishPos.Y;
         }
 
         private void CreateNewShape(PointF endPoint)
@@ -233,5 +301,6 @@ namespace VectorEditor.forms
                 }
             }
         }
+
     }
 }
