@@ -274,6 +274,14 @@ namespace VectorEditor.forms
                     Height = Math.Abs(endPoint.Y - _startPos.Y),
                     FillColor = _currentColor
                 },
+                ShapeType.Line => new Line
+                {
+                    X = _startPos.X,
+                    Y = _startPos.Y,
+                    EndX = endPoint.X,
+                    EndY = endPoint.Y,
+                    StrokeColor = _currentColor
+                },
                 _ => throw new ArgumentException("Unknown shape type")
             };
 
