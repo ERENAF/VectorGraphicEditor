@@ -27,6 +27,7 @@ namespace VectorEditor.forms
         private bool _IsRotating;
         private PointF _startPos;
         private PointF _finishPos;
+        private PointF _dragOffset;
 
 
         private NumericUpDown posXNUD;
@@ -62,7 +63,7 @@ namespace VectorEditor.forms
             };
             shapeCmbbtn.Items.AddRange(Enum.GetNames(typeof(ShapeType)));
             shapeCmbbtn.SelectedIndex = 0;
-            shapeCmbbtn.Click += (s, e) =>
+            shapeCmbbtn.SelectedIndexChanged += (s, e) =>
             {
                 if (shapeCmbbtn.SelectedIndex >= 0)
                 {
@@ -183,6 +184,8 @@ namespace VectorEditor.forms
             if (_selectedshape != null)
             {
                 _IsMoving = true;
+                _dragOffset = new PointF(e.X - _selectedshape.X, e.Y - _selectedshape.Y);
+
                 foreach (var shape in _shapes)
                 {
                     shape.IsSelected = shape == _selectedshape;
@@ -191,7 +194,6 @@ namespace VectorEditor.forms
                 posYNUD.Value = (int)_selectedshape.Y;
                 angleNUD.Value = (int)_selectedshape.Rotation;
                 scaleNUD.Value = (int)_selectedshape.Scale;
-
             }
             else
             {
@@ -200,15 +202,16 @@ namespace VectorEditor.forms
 
             canvas.Invalidate();
         }
+
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
             if (_IsMoving && _selectedshape != null)
             {
-                float deltaX = e.X - _finishPos.X;
-                float deltaY = e.Y - _finishPos.Y;
+                float newX = e.X - _dragOffset.X;
+                float newY = e.Y - _dragOffset.Y;
 
-                _selectedshape.X += deltaX;
-                _selectedshape.Y += deltaY;
+                _selectedshape.X = newX;
+                _selectedshape.Y = newY;
 
                 _finishPos = e.Location;
                 canvas.Invalidate();
@@ -226,13 +229,23 @@ namespace VectorEditor.forms
             {
                 CreateNewShape(e.Location);
             }
+            else if (_IsMoving && _selectedshape != null)
+            {
+
+                var finalPosition = new PointF(Math.Max(_selectedshape.X,0), Math.Max(_selectedshape.Y,0));
+                var command = new MoveShapeCommand(_selectedshape,
+                    new PointF(_startPos.X - _dragOffset.X, _startPos.Y - _dragOffset.Y),
+                    finalPosition);
+                _shapemanager.ExecuteCommand(command);
+
+                posXNUD.Value = (decimal)_selectedshape.X;
+                posYNUD.Value = (decimal)_selectedshape.Y;
+            }
+
             _IsDrawing = false;
             _IsMoving = false;
             _IsRotating = false;
-/*надо бы исправить */
-            _shapemanager.ExecuteCommand(new MoveShapeCommand(_selectedshape, _startPos, _finishPos));
-            posXNUD.Value = (int)_finishPos.X;
-            posYNUD.Value = (int)_finishPos.Y;
+            _dragOffset = PointF.Empty;
         }
 
         private void CreateNewShape(PointF endPoint)
@@ -247,14 +260,23 @@ namespace VectorEditor.forms
             {
                 ShapeType.Rectangle => new VectorEditor.shapes.Rectangle
                 {
-                    X = Math.Min(_startPos.X, endPoint.X),
-                    Y = Math.Min(_startPos.Y, endPoint.Y),
+                    X = Math.Max(_startPos.X, endPoint.X),
+                    Y = Math.Max(_startPos.Y, endPoint.Y),
                     Width = width,
                     Height = height,
                     FillColor = _currentColor
                 },
+                ShapeType.Ellipse => new VectorEditor.shapes.Ellipse
+                {
+                    X = Math.Min(_startPos.X, endPoint.X),
+                    Y = Math.Min(_startPos.Y, endPoint.Y),
+                    Width = Math.Abs(endPoint.X - _startPos.X),
+                    Height = Math.Abs(endPoint.Y - _startPos.Y),
+                    FillColor = _currentColor
+                },
                 _ => throw new ArgumentException("Unknown shape type")
             };
+
 
             var command = new AddShapeCommand(newShape, _shapes);
             _shapemanager.ExecuteCommand(command);

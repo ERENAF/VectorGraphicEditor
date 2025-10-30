@@ -38,8 +38,9 @@ namespace VectorEditor.shapes
             get => new PointF(X, Y);
             set
             {
-                X = value.X;
-                Y = value.Y;
+               
+                X = Math.Max(value.X,0);
+                Y = Math.Max(value.Y,0);
             }
         }
         public float Rotation
